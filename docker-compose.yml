@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    image: 'mysql:9.2.0'
+    container_name: 'java-mysql'
+    environment:
+      - 'MYSQL_USER=root'
+      - 'MYSQL_PASSWORD=root505'
+      - 'MYSQL_DB=kata_task_3.1.4_with_docker'
+
+  app:
+    build: ./
+    container_name: 'java-app'
+    ports:
+    - 8080:8080
